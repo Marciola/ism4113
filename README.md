@@ -1,5 +1,7 @@
 # Ism4113
 
+ISM4113 database project demo.
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
