@@ -1,6 +1,6 @@
 # Ism4113
 
-ISM4113 database project demo.
+ISM4113 database project demo using Phoenix and Postgresql.
 
 To start your Phoenix server:
 
