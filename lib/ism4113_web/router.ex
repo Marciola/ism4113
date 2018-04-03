@@ -17,6 +17,7 @@ defmodule Ism4113Web.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/vendors", VendorController
   end
 
   # Other scopes may use custom stacks.

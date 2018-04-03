@@ -1,0 +1,30 @@
+<h2>Listing Vendors</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Website</th>
+      <th>Phone</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for vendor <- @vendors do %>
+    <tr>
+      <td><%= vendor.name %></td>
+      <td><%= vendor.website %></td>
+      <td><%= vendor.phone %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: vendor_path(@conn, :show, vendor), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: vendor_path(@conn, :edit, vendor), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: vendor_path(@conn, :delete, vendor), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Vendor", to: vendor_path(@conn, :new) %></span>
