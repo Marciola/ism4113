@@ -18,6 +18,7 @@ defmodule Ism4113Web.Router do
 
     get "/", PageController, :index
     resources "/vendors", VendorController
+    resources "/products", ProductController
   end
 
   # Other scopes may use custom stacks.
