@@ -10,6 +10,6 @@ defmodule Ism4113.Repo.Migrations.CreateProducts do
       timestamps()
     end
 
-    create index(:products, [:vendors])
+    create index(:products, [:vendor_id])
   end
 end
