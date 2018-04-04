@@ -5,11 +5,11 @@ defmodule Ism4113.Repo.Migrations.CreateProducts do
     create table(:products) do
       add :name, :string
       add :price, :integer
-      add :vendor_id, references(:vendor, on_delete: :nothing)
+      add :vendor_id, references(:vendors, on_delete: :nothing)
 
       timestamps()
     end
 
-    create index(:products, [:vendor])
+    create index(:products, [:vendors])
   end
 end
