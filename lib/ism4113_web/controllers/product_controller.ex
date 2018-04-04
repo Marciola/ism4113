@@ -11,8 +11,7 @@ defmodule Ism4113Web.ProductController do
   end
 
   def new(conn, _params) do
-    query = from(v in Vendor, select: {v.id, v.name})
-    vendors = Repo.all(query)
+    vendors = Repo.all from v in Vendor, select: {v.name, v.id}
     changeset = Sales.change_product(%Product{})
     render(conn, "new.html", changeset: changeset, vendors: vendors)
   end
