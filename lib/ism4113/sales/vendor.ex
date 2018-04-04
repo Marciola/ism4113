@@ -7,6 +7,7 @@ defmodule Ism4113.Sales.Vendor do
     field :name, :string
     field :phone, :integer
     field :website, :string
+    has_many :products, Ism4113.Sales.Product
 
     timestamps()
   end
