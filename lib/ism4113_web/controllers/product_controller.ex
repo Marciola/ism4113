@@ -3,6 +3,7 @@ defmodule Ism4113Web.ProductController do
 
   alias Ism4113.Sales
   alias Ism4113.Sales.Product
+  alias Ism4113.Sales.Vendor
 
   def index(conn, _params) do
     products = Sales.list_products()
@@ -10,8 +11,10 @@ defmodule Ism4113Web.ProductController do
   end
 
   def new(conn, _params) do
+    query = from(v in Vendor, select: {v.id, v.name})
+    vendors = Repo.all(query)
     changeset = Sales.change_product(%Product{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, vendors: vendors)
   end
 
   def create(conn, %{"product" => product_params}) do
