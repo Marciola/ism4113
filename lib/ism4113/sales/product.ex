@@ -6,7 +6,7 @@ defmodule Ism4113.Sales.Product do
   schema "products" do
     field :name, :string
     field :price, :integer
-    field :vendor, :id
+    #field :vendor, :id
     belongs_to :vendor, Ism4113.Sales.Vendor
 
     timestamps()
